@@ -16,8 +16,8 @@ donuts.
 - Pour les groupes rapides, l'IHM et les possibilités d'interaction seront plus riches.
 
 Il faut deployer le projet sur un server GlassFish :
-  - WSDL : http://www-pc:8080/TP2_Donuts/DonutsWSDLService?WSDL
-  - Tester : http://www-pc:8080/TP2_Donuts/DonutsWSDLService?Tester
+  - WSDL : http://localhost:8080/TP2_Donuts/DonutsWSDLService?WSDL
+  - Tester : http://localhost:8080/TP2_Donuts/DonutsWSDLService?Tester
 
 M2 ICE 2016/2017 University of Toulouse II.
 Enseignant : Jean-Christophe Sakdavong (University of Toulouse, Toulouse).
