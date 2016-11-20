@@ -19,5 +19,5 @@ Il faut deployer le projet sur un server GlassFish :
   - WSDL : http://www-pc:8080/TP2_Donuts/DonutsWSDLService?WSDL
   - Tester : http://www-pc:8080/TP2_Donuts/DonutsWSDLService?Tester
 
-M1 ICE 2016/2017 University of Toulouse II
-Enseignant : Jean-Christophe Sakdavong (University of Toulouse, Toulouse)
+M1 ICE 2016/2017 University of Toulouse II.
+Enseignant : Jean-Christophe Sakdavong (University of Toulouse, Toulouse).
