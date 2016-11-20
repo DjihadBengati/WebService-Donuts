@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="DonutsWSDL" targetNamespace="http://j2ee.netbeans.org/wsdl/TP2_Donuts/java/DonutsWSDL"
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://j2ee.netbeans.org/wsdl/TP2_Donuts/java/DonutsWSDL" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+    <types>
+        <xsd:schema targetNamespace="http://j2ee.netbeans.org/wsdl/TP2_Donuts/java/DonutsWSDL" xmlns:tns="http://j2ee.netbeans.org/wsdl/TP2_Donuts/java/DonutsWSDL">
+            <xsd:complexType name="DonutsList">
+                <xsd:sequence>
+                    <xsd:element name="donut" type="xsd:string"></xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </types>
+    <message name="deposerUnDonutRequest">
+        <part name="topping" type="xsd:string"/>
+    </message>
+    <message name="deposerUnDonutResponse">
+        <part name="done" type="xsd:boolean"/>
+    </message>
+    <message name="DonutsWSDLOperationRequest"/>
+    <message name="DonutsWSDLOperationResponse">
+        <part name="nombreDeDonuts" type="xsd:int"/>
+    </message>
+    <message name="DonutsWSDLOperationRequest1">
+        <part name="nombre" type="xsd:int"/>
+    </message>
+    <message name="DonutsWSDLOperationResponse1">
+        <part name="donutsList" type="tns:DonutsList"/>
+    </message>
+    <portType name="DonutsWSDLPortType">
+        <operation name="deposerUnDonut">
+            <input name="input1" message="tns:deposerUnDonutRequest"/>
+            <output name="output1" message="tns:deposerUnDonutResponse"/>
+        </operation>
+        <operation name="nombreDonutsDisponibles">
+            <input name="input2" message="tns:DonutsWSDLOperationRequest"/>
+            <output name="nombre" message="tns:DonutsWSDLOperationResponse"/>
+        </operation>
+        <operation name="recevoirDonuts">
+            <input name="input3" message="tns:DonutsWSDLOperationRequest1"/>
+            <output name="output2" message="tns:DonutsWSDLOperationResponse1"/>
+        </operation>
+    </portType>
+    <binding name="DonutsWSDLBinding" type="tns:DonutsWSDLPortType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="deposerUnDonut">
+            <soap:operation/>
+            <input name="input1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/TP2_Donuts/java/DonutsWSDL"/>
+            </input>
+            <output name="output1">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/TP2_Donuts/java/DonutsWSDL"/>
+            </output>
+        </operation>
+        <operation name="nombreDonutsDisponibles">
+            <soap:operation/>
+            <input name="input2">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/TP2_Donuts/java/DonutsWSDL"/>
+            </input>
+            <output name="nombre">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/TP2_Donuts/java/DonutsWSDL"/>
+            </output>
+        </operation>
+        <operation name="recevoirDonuts">
+            <soap:operation/>
+            <input name="input3">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/TP2_Donuts/java/DonutsWSDL"/>
+            </input>
+            <output name="output2">
+                <soap:body use="literal" namespace="http://j2ee.netbeans.org/wsdl/TP2_Donuts/java/DonutsWSDL"/>
+            </output>
+        </operation>
+    </binding>
+    <service name="DonutsWSDLService">
+        <port name="DonutsWSDLPort" binding="tns:DonutsWSDLBinding">
+            <soap:address location="http://localhost:${HttpDefaultPort}/DonutsWSDLService/DonutsWSDLPort"/>
+        </port>
+    </service>
+</definitions>
